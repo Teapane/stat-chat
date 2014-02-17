@@ -22,6 +22,18 @@
               <span>Stats</span>
             <% end %>
             </li>
+            <li>
+              <%= link_to do %>
+                <i class='icon-user'></i>
+                <span>Profile</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to do %>
+                <i class='icon-home'></i>
+                <span>Chat</span>
+              <% end %>
+            </li>
           </ul>
 
         </div>
@@ -31,7 +43,9 @@
   </div>
 
 
-<%= yield %>
+<div class='main'>
+  <%= yield %>
+</div>
 
 </body>
 </html>
