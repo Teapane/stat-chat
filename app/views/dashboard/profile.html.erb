@@ -4,20 +4,50 @@
       <div class='widget stacked'>
         <div class='widget-header'>
           <i class='icon-bar-chart'></i>
-          <h3>Power Ranking </h3>
+          <h3>Power Ranking</h3>
         </div>
         <div class='widget-content'>
           <canvas id='ranking-chart' height='300px' width='530px'>
           </canvas>
-          
         </div>
       </div>
     </div>
     <div class='col-md-6'>
-
+      <div class='widget stacked'>
+        <div class='widget-header'>
+          <i class='icon-bar-chart'></i>
+          <h3>Points Breakdown</h3>
+        </div>
+        <div class='widget-content'>
+          <canvas id='points-chart' height='300px' width='530px'>
+          </canvas>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  $(function(){
+  var data = [
+    {
+      value: 30,
+      color:"#F38630"
+    },
+    {
+      value : 50,
+      color : "#E0E4CC"
+    },
+    {
+      value : 100,
+      color : "#69D2E7"
+    }     
+  ]
+  var ctx = $("#points-chart").get(0).getContext("2d");
+  new Chart(ctx).Pie(data);
+})
+  
+</script>
 
 <script>
   $(function(){
