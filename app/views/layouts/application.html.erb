@@ -6,7 +6,30 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body data-ember-extension='1'>
+
+
+  <div class='subnavbar'>
+    <div class='subnavbar-inner'>
+      <div class='container'>
+
+        <div class='collapse subnav-collapse'>
+
+          <ul class='mainnav'>
+            <li class='active'>
+            <%= link_to stats_path do %>
+              <i class='icon-home'></i>
+              <span>Stats</span>
+            <% end %>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 
 <%= yield %>
 
