@@ -4,15 +4,13 @@ require 'spec_helper'
 
 describe CommitFetcher do
 
-  attr_reader :response, :parsed_data
+  attr_reader :response, :parsed_data, :commit_fetcher
 
   before do
     VCR.use_cassette 'model/commit_fetcher' do
-      # @response = Faraday.get('https://github.com/users/BryanaKnight/contributions_calendar_data')
-      # @parsed_data = JSON.parse(@response.body)
       @commit_fetcher = CommitFetcher.new
-      @response = @commit_fetcher.response
-      @parsed_data = @commit_fetcher.commits
+      @response = commit_fetcher.response
+      @parsed_data = commit_fetcher.commits
     end
   end 
 
@@ -27,8 +25,27 @@ describe CommitFetcher do
     expect(Date.parse(parsed_data.last[0])).to eq(Date.today)
   end
 
-  it "should return only results from a specified week" do
-    expect(@commit_fetcher.commits_for_week).to eq("something")
+  it "should return only results from current week if no week is specified" do
+    commits = [["2013/02/18", 0], ["2013/02/19", 0], ["2013/02/20", 0], ["2013/02/21", 0], ["2013/02/22", 0], ["2013/02/23", 0], ["2013/02/24", 0], ["2014/02/17", 1], ["2014/02/18", 0]]
+    commit_fetcher.stub(:commits).and_return(commits)
+    
+    result = [["2014/02/17", 1], ["2014/02/18", 0]]
+    expect(commit_fetcher.commits_for_week).to eq(result)
+  end
+
+  it "should return only results from the specified week" do
+    commits = [["2014/01/19", 0], ["2014/01/20", 0], ["2014/01/21", 0], ["2014/01/22", 0], ["2014/01/23", 0], ["2014/01/24", 0], ["2014/02/17", 1], ["2014/02/18", 0]]
+    commit_fetcher.stub(:commits).and_return(commits)
+    
+    result = [["2014/01/20", 0], ["2014/01/21", 0], ["2014/01/22", 0], ["2014/01/23", 0], ["2014/01/24", 0]]
+    expect(commit_fetcher.commits_for_week(4)).to eq(result)
+  end
+
+  it "should return the total number of commits for the current week" do
+    commits = [["2014/01/19", 0], ["2014/01/20", 0], ["2014/01/21", 0], ["2014/01/22", 0], ["2014/01/23", 0], ["2014/01/24", 0], ["2014/02/17", 1], ["2014/02/18", 10]]
+    commit_fetcher.stub(:commits).and_return(commits)
+
+    expect(commit_fetcher.number_of_commits_this_week).to eq(11)
   end
 
 

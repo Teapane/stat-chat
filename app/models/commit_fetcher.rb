@@ -7,14 +7,14 @@ class CommitFetcher
     @commits = JSON.parse(response.body)
   end
 
-  def commits_this_week(user)
-    commits_for_current_week.map do |summary|
+  def number_of_commits_this_week
+    commits_for_week.map do |summary|
       summary[1]
     end.inject(:+)
   end
 
   def commits_for_week(week_num = Date.today.cweek)
-    commits.select { |item| (Date.parse(item[0])).cweek == week_num }
+    commits.select { |item| (Date.parse(item[0])).cweek == week_num && (Date.parse(item[0]).year == Date.today.year)}
   end
 
 end
