@@ -7,6 +7,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'faraday'
 
 
 group :doc do
@@ -15,4 +16,6 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'vcr'
+  gem 'webmock'
 end

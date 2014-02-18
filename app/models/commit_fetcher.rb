@@ -1,8 +1,9 @@
 class CommitFetcher
-  attr_reader :commits
+  attr_reader :commits, :response
 
-  def raw_commits(user)
-    response = Faraday.get('https://github.com/users/#{user.username}/contributions_calendar_data')
+  def initialize
+    #USER SHOULD BE PASSED IN TO INITIALIZE
+    @response = Faraday.get('https://github.com/users/BryanaKnight/contributions_calendar_data')
     @commits = JSON.parse(response.body)
   end
 
