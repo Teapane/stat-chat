@@ -8,6 +8,26 @@
 </head>
 <body data-ember-extension='1'>
 
+  <nav class='navbar navbar-inverse' role='navigation' style='margin-bottom:0px'>
+    <div class='container'>
+      <div class='collapse navbar-collapse navbar-ex1-collapse'>
+        <div id='account_info' class='pull-right'>
+          <ul class='nav navbar-nav navbar-right'>
+           <li class='dropdown'>
+             <a class='dropdown-toggle' data-toggle='dropdown'>
+               <%= current_user.email if current_user %>
+             </a>
+             <ul class='dropdown-menu'>
+               <li><a>Hello</a></li>
+               <li>Goodbye</li>
+             </ul>
+           </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
 
   <div class='subnavbar'>
     <div class='subnavbar-inner'>
@@ -36,11 +56,9 @@
             </li>
           </ul>
 
+
         </div>
 
-      </div>
-      <div id='account_info'>
-        <%= current_user.email if current_user %>
       </div>
     </div>
   </div>
