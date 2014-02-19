@@ -10,7 +10,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'faraday'
 gem 'omniauth'
 
-
 group :doc do
   gem 'sdoc', require: false
 end
