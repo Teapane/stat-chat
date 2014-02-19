@@ -9,6 +9,12 @@ describe 'login with github' do
         page.should have_link('Login with Github')
       end
     end
+
+    it 'can log me in' do
+      visit login_path
+      click_on 'Login with Github'
+      current_path.should be stats_path
+    end
   end
 
 end
