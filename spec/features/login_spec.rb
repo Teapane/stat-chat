@@ -11,11 +11,21 @@ describe 'login with github' do
     end
 
     it 'can log me in' do
-      visit login_path
-      save_and_open_page
-      click_on 'Login with Github'
-      current_path.should be stats_path
+      valid_login
+      current_path.should eq stats_path
     end
+
+    it 'will save my email when I log in' do
+      valid_login
+      within('#account_info') do
+        page.should have_content 'somebody@example.com'
+      end
+    end
+  end
+
+  def valid_login
+    visit login_path
+    click_on 'Login with Github'
   end
 
 end
