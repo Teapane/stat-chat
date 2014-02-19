@@ -15,4 +15,19 @@ class User < ActiveRecord::Base
     self.save
   end
 
+  def rank
+    ranked_users = User.all.sort_by { |user| user.score }
+    ranked_users.index(self) + 1
+  end
+
+  def score
+    (commits * 0.25)
+  end
+
+  def commit_points
+    (commits * 0.25)
+  end
+
+
+
 end
