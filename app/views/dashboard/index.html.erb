@@ -22,54 +22,16 @@
               </tr>
             </thead>
             <tbody>
+              <% @ranked_users.each_with_index do |user, index| %>
               <tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
+                <td><%= index + 1 %></td>
+                <td><%= user.nickname %></td>
+                <td></td>
+                <td><%= user.commits %></td>
+                <td></td>
+                <td></td>
               </tr>
-              <tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
-              <tr>
-              <tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
-              <tr>
-              <tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
+              <% end %>
             </tbody>
           </table>
 
