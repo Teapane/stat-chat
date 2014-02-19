@@ -9,4 +9,10 @@ class User < ActiveRecord::Base
     )
   end
 
+  def update_commits
+    @commit_fetcher = CommitFetcher.new(self.nickname)
+    self.commits = @commit_fetcher.alltime_commits
+    self.save
+  end
+
 end
