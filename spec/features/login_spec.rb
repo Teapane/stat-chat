@@ -24,13 +24,21 @@ describe 'login with github' do
   end
 
   context 'when I login with github' do
-    it 'displays my information on the power rankings' do
+    it 'displays username on the power rankings' do
       valid_login
       within('.widget-content') do
         page.should have_content 'somebody'
       end
     end
+
+    it 'displays a score based on api gathered info' do
+      valid_login
+      within('tbody tr:first .power_points') do
+        page.should have_content '0'
+      end
+    end
   end
+
 
   def valid_login
     visit login_path
