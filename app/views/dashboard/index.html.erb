@@ -25,7 +25,7 @@
               <% @ranked_users.each_with_index do |user, index| %>
               <tr>
                 <td class='rank'><%= index + 1 %></td>
-                <td class='username'><%= user.nickname %></td>
+                <td class='username'><%= link_to user.nickname, user_path(user) %></td>
                 <td class='power_points'><%= score(user) %></td>
                 <td class='commits'><%= user.commits %></td>
                 <td class='exercisms'></td>
