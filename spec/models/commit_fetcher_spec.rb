@@ -1,7 +1,5 @@
 require 'spec_helper'
 
-
-
 describe CommitFetcher do
 
   attr_reader :response, :parsed_data, :commit_fetcher
@@ -12,14 +10,14 @@ describe CommitFetcher do
       @response = commit_fetcher.response
       @parsed_data = commit_fetcher.commits
     end
-  end 
+  end
 
   it "gets response from github api" do
     expect(response.status).to eq 200
   end
 
   it "should fetch an array of commits for a user" do
-    
+
     expect(parsed_data.first.count).to eq(2)
     expect(Date.parse(parsed_data.first[0])).to eq(Date.today - 365)
     expect(Date.parse(parsed_data.last[0])).to eq(Date.today)
@@ -28,7 +26,7 @@ describe CommitFetcher do
   it "should return only results from current week if no week is specified" do
     commits = [["2013/02/18", 0], ["2013/02/19", 0], ["2013/02/20", 0], ["2013/02/21", 0], ["2013/02/22", 0], ["2013/02/23", 0], ["2013/02/24", 0], ["2014/02/17", 1], ["2014/02/18", 0]]
     commit_fetcher.stub(:commits).and_return(commits)
-    
+
     result = [["2014/02/17", 1], ["2014/02/18", 0]]
     expect(commit_fetcher.commits_for_week).to eq(result)
   end
@@ -36,7 +34,7 @@ describe CommitFetcher do
   it "should return only results from the specified week" do
     commits = [["2014/01/19", 0], ["2014/01/20", 0], ["2014/01/21", 0], ["2014/01/22", 0], ["2014/01/23", 0], ["2014/01/24", 0], ["2014/02/17", 1], ["2014/02/18", 0]]
     commit_fetcher.stub(:commits).and_return(commits)
-    
+
     result = [["2014/01/20", 0], ["2014/01/21", 0], ["2014/01/22", 0], ["2014/01/23", 0], ["2014/01/24", 0]]
     expect(commit_fetcher.commits_for_week(4)).to eq(result)
   end

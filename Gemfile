@@ -8,7 +8,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'faraday'
-
+gem 'omniauth'
+gem 'omniauth-github'
 
 group :doc do
   gem 'sdoc', require: false
@@ -16,6 +17,10 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'shoulda-matchers'
+  gem 'guard-rspec', require: false
+  gem 'launchy'
   gem 'vcr'
   gem 'webmock'
 end
