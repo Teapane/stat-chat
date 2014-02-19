@@ -12,6 +12,7 @@ describe 'login with github' do
 
     it 'can log me in' do
       visit login_path
+      save_and_open_page
       click_on 'Login with Github'
       current_path.should be stats_path
     end
