@@ -16,8 +16,11 @@ class User < ActiveRecord::Base
   end
 
   def rank
-    ranked_users = User.all.sort_by { |user| user.score }
-    ranked_users.index(self) + 1
+    User.ranked_users.index(self) + 1
+  end
+
+  def self.ranked_users
+    User.all.sort_by { |user| user.score }.reverse
   end
 
   def score
