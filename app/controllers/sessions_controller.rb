@@ -5,6 +5,9 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_or_create_from_auth_hash(auth_hash)
+    @commit_fetcher = CommitFetcher.new(@user.nickname)
+    @user.commits = @commit_fetcher.alltime_commits
+    @user.save
     session[:user_id] = @user.id
     redirect_to stats_path
   end
