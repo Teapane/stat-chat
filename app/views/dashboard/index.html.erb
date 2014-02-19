@@ -24,12 +24,12 @@
             <tbody>
               <% @ranked_users.each_with_index do |user, index| %>
               <tr>
-                <td><%= index + 1 %></td>
-                <td><%= user.nickname %></td>
-                <td></td>
-                <td><%= user.commits %></td>
-                <td></td>
-                <td></td>
+                <td class='rank'><%= index + 1 %></td>
+                <td class='username'><%= user.nickname %></td>
+                <td class='power_points'><%= score(user) %></td>
+                <td class='commits'><%= user.commits %></td>
+                <td class='exercisms'></td>
+                <td class='chat_points'></td>
               </tr>
               <% end %>
             </tbody>
