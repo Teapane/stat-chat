@@ -7,8 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body data-ember-extension='1'>
-
-
+  <% if current_user %>
   <div class='subnavbar'>
     <div class='subnavbar-inner'>
       <div class='container'>
@@ -44,7 +43,7 @@
       </div>
     </div>
   </div>
-
+<%end%>
 
 <div class='main'>
   <%= yield %>
