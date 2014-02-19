@@ -1,9 +1,9 @@
 class CommitFetcher
   attr_reader :commits, :response
 
-  def initialize
+  def initialize(username)
     #USER SHOULD BE PASSED IN TO INITIALIZE
-    @response = Faraday.get('https://github.com/users/BryanaKnight/contributions_calendar_data')
+    @response = Faraday.get("https://github.com/users/#{username}/contributions_calendar_data")
     @commits = JSON.parse(response.body)
   end
 
@@ -17,12 +17,16 @@ class CommitFetcher
     commits.select { |item| (find_week(item[0])) == week_num && (find_year(item[0]) == this_year)}
   end
 
+  def alltime_commits
+    commits.map {|commit| commit[1]}.reduce(:+)
+  end
+
   def find_year(date)
     Date.parse(date).year
   end
 
   def find_week(date)
-    Date.parse(date)).cweek
+    Date.parse(date).cweek
   end
 
   def this_year
