@@ -23,6 +23,15 @@ describe 'login with github' do
     end
   end
 
+  context 'when I login with github' do
+    it 'displays my information on the power rankings' do
+      valid_login
+      within('.widget-content') do
+        page.should have_content 'somebody'
+      end
+    end
+  end
+
   def valid_login
     visit login_path
     click_on 'Login with Github'

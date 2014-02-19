@@ -22,54 +22,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
-              <tr>
-              <tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
-              <tr>
-              <tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
+              <% @ranked_users.each_with_index do |user, index| %>
+                <tr><%= index + 1 %></tr>
+                <tr><%= user.nickname %></tr>
+                <tr></tr>
+                <tr><%= user.commits %></tr>
+                <tr></tr>
+                <tr></tr>
+              <% end %>
             </tbody>
           </table>
 
