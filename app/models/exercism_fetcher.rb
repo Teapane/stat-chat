@@ -1,11 +1,2 @@
 class ExercismFetcher
-  
-  
-
-
-
-
-
-
-
 end
