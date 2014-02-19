@@ -22,5 +22,8 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem 'launchy'
   gem 'vcr'
+end
+
+group :test do
   gem 'webmock'
 end
