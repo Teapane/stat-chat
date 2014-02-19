@@ -13,8 +13,24 @@ class CommitFetcher
     end.inject(:+)
   end
 
-  def commits_for_week(week_num = Date.today.cweek)
-    commits.select { |item| (Date.parse(item[0])).cweek == week_num && (Date.parse(item[0]).year == Date.today.year)}
+  def commits_for_week(week_num = this_week)
+    commits.select { |item| (find_week(item[0])) == week_num && (find_year(item[0]) == this_year)}
+  end
+
+  def find_year(date)
+    Date.parse(date).year
+  end
+
+  def find_week(date)
+    Date.parse(date)).cweek
+  end
+
+  def this_year
+    Date.today.year
+  end
+
+  def this_week
+    Date.today.cweek
   end
 
 end
