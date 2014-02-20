@@ -18,4 +18,8 @@ class ExercismFetcher
   def submission_count
     stats[:activity][:total][:submissions].to_i
   end
+
+  def language_count
+    stats[:activity][:total][:languages].to_i
+  end
 end

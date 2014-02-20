@@ -55,5 +55,9 @@ describe ExercismFetcher do
     it "returns total submissions" do 
       expect(exercism_fetcher.submission_count).to eq 30
     end
+
+    it "returns total languages" do 
+      expect(exercism_fetcher.language_count).to eq 2
+    end
   end
 
