@@ -14,4 +14,8 @@ class ExercismFetcher
   def nitpick_count
     stats[:activity][:total][:nitpicks].to_i
   end
+
+  def submission_count
+    stats[:activity][:total][:submissions].to_i
+  end
 end
