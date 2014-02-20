@@ -9,4 +9,10 @@ describe Score do
   it {should validate_presence_of(:nitpicks_score)}
   it {should validate_presence_of(:submissions_score) }
   it {should validate_presence_of(:languages_score)}
+
+  let(:score) { FactoryGirl.create(:score) }
+
+  it "can calculate an agregate score" do
+    score.total.should be 410
+  end
 end
