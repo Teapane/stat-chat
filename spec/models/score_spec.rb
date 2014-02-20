@@ -15,4 +15,5 @@ describe Score do
   it "can calculate an agregate score" do
     score.total.should be 410
   end
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140220185911) do
+ActiveRecord::Schema.define(version: 20140220201946) do
 
   create_table "scores", force: true do |t|
     t.datetime "created_at"
@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20140220185911) do
     t.integer  "contributed_repos_score", default: 0
     t.integer  "hibernating_score",       default: 0
     t.integer  "nitpicks_score",          default: 0
-    t.integer  "submission_score",        default: 0
     t.integer  "submissions_score",       default: 0
     t.integer  "languages_score",         default: 0
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|

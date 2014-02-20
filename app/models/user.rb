@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   validates_presence_of :email, :nickname, :commits
+  has_many :scores
 
   def self.find_or_create_from_auth_hash(auth_hash)
     @user = User.find_or_create_by(

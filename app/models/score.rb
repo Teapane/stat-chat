@@ -4,6 +4,8 @@ class Score < ActiveRecord::Base
                         :nitpicks_score, :submissions_score, 
                         :languages_score
 
+  belongs_to :user
+
   def total
     values = 0
     attributes.each_key do |key|
