@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://exercism.io/api/v1/stats/BryanaKnight/snapshot
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Set-Cookie:
+      - rack.session=BAh7CEkiD3Nlc3Npb25faWQGOgZFVEkiRTUzZjkyMzQ2OGE3NzI4Yzg2YWJm%0AYjM3NmM0MzBhYTNjMDNiZGM0MWI0YjM3ZTk2NjI5MmRhZTNhNzM3YjdhYzUG%0AOwBGSSIJY3NyZgY7AEZJIiVkYjA5MzQ1ODZiNmNlYmNlZmM0NmFmMDVjYmIw%0AOWU4MAY7AEZJIg10cmFja2luZwY7AEZ7CEkiFEhUVFBfVVNFUl9BR0VOVAY7%0AAFRJIi0zODMxYmE1MmJhMGRhODJiMGQ5NjdmMDE0OWNiZDkyNmU3NmFjZWZi%0ABjsARkkiGUhUVFBfQUNDRVBUX0VOQ09ESU5HBjsAVEkiLWRkZDA5ODkxNzRm%0AMTlhNWIxODc5MTIxM2NjNDBjNWE2MDlkMjU0NmMGOwBGSSIZSFRUUF9BQ0NF%0AUFRfTEFOR1VBR0UGOwBUSSItZGEzOWEzZWU1ZTZiNGIwZDMyNTViZmVmOTU2%0AMDE4OTBhZmQ4MDcwOQY7AEY%3D%0A--9c78c6d363a559e213f91b10882dbec0d140ccbd;
+        path=/; HttpOnly
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '275'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"activity":{"most_recent":{"submission":"2014-02-19T04:23:37Z","nitpick":"2014-01-15T17:45:11Z"},"exercises":{"active":"1","hibernating":"3","completed":"7"},"total":{"nitpicks":"0","submissions":"30","languages":2},"past7":{"nitpicks":"0","submissions":"3","languages":1}}}'
+    http_version: 
+  recorded_at: Thu, 20 Feb 2014 18:38:25 GMT
+recorded_with: VCR 2.8.0
