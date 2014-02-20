@@ -1,4 +1,3 @@
-
 class ExercismFetcher
   attr_reader :response, :stats
 
