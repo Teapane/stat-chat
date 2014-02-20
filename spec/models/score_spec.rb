@@ -7,4 +7,5 @@ describe Score do
   it {should validate_presence_of(:contributed_repos_score)}
   it {should validate_presence_of(:hibernating_score)}
   it {should validate_presence_of(:nitpicks_score)}
+  it {should validate_presence_of(:submissions_score)}
 end
