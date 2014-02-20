@@ -9,8 +9,11 @@ describe ExercismFetcher do
       @exercism_fetcher = ExercismFetcher.new(username)
       @response = exercism_fetcher.response
       @parsed_data = exercism_fetcher.stats
+      exercism_fetcher.stub(:stats).and_return(snapshot)
     end
   end
+
+
 
     def snapshot
      { activity: {
@@ -42,13 +45,19 @@ describe ExercismFetcher do
     end
 
     it "returns hibernating exercises" do   
-      exercism_fetcher.stub(:stats).and_return(snapshot)
       expect(exercism_fetcher.hibernating_count).to eq 3
     end
 
     it "returns nitpicks given" do 
-      exercism_fetcher.stub(:stats).and_return(snapshot)
       expect(exercism_fetcher.nitpick_count).to eq 0
+    end
+
+    it "returns total submissions" do 
+      expect(exercism_fetcher.submission_count).to eq 30
+    end
+
+    it "returns total languages" do 
+      expect(exercism_fetcher.language_count).to eq 2
     end
   end
 
