@@ -1,9 +1,7 @@
 class DashboardController < ApplicationController
 
   def index
-  end
-
-  def profile
+    @ranked_users = User.ranked_users
   end
 
 end

@@ -2,11 +2,12 @@ require 'spec_helper'
 
 describe CommitFetcher do
 
-  attr_reader :response, :parsed_data, :commit_fetcher
+  attr_reader :response, :parsed_data, :commit_fetcher, :username
 
   before do
     VCR.use_cassette 'model/commit_fetcher' do
-      @commit_fetcher = CommitFetcher.new
+      @username = 'wvmitchell'
+      @commit_fetcher = CommitFetcher.new(username)
       @response = commit_fetcher.response
       @parsed_data = commit_fetcher.commits
     end
@@ -17,7 +18,6 @@ describe CommitFetcher do
   end
 
   it "should fetch an array of commits for a user" do
-
     expect(parsed_data.first.count).to eq(2)
     expect(Date.parse(parsed_data.first[0])).to eq(Date.today - 365)
     expect(Date.parse(parsed_data.last[0])).to eq(Date.today)

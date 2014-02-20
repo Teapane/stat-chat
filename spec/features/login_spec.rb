@@ -5,8 +5,8 @@ describe 'login with github' do
   context 'when I visit the page without having logged in' do
     it 'has a login form' do
       visit login_path
-      within('#login_form') do
-        page.should have_link('Login with Github')
+      within('.login-button') do
+        page.should have_button('Login with Github')
       end
     end
 
@@ -22,6 +22,23 @@ describe 'login with github' do
       end
     end
   end
+
+  context 'when I login with github' do
+    it 'displays username on the power rankings' do
+      valid_login
+      within('.widget-content') do
+        page.should have_content 'somebody'
+      end
+    end
+
+    it 'displays a score based on api gathered info' do
+      valid_login
+      within('tbody tr:first .power_points') do
+        page.should have_content '0'
+      end
+    end
+  end
+
 
   def valid_login
     visit login_path

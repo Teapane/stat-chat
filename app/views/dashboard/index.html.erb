@@ -22,54 +22,16 @@
               </tr>
             </thead>
             <tbody>
+              <% @ranked_users.each_with_index do |user, index| %>
               <tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
+                <td class='rank'><%= index + 1 %></td>
+                <td class='username'><%= link_to user.nickname, user_path(user) %></td>
+                <td class='power_points'><%= score(user) %></td>
+                <td class='commits'><%= user.commits %></td>
+                <td class='exercisms'></td>
+                <td class='chat_points'></td>
               </tr>
-              <tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
-              <tr>
-              <tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
-              <tr>
-              <tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
-                <td>1</td>
-                <td>Luke</td>
-                <td>5433</td>
-                <td>34</td>
-                <td>5</td>
-                <td>439232</td>
-              </tr>
+              <% end %>
             </tbody>
           </table>
 

@@ -1,0 +1,2 @@
+class ExercismFetcher
+end
