@@ -26,6 +26,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'sqlite3'
   gem 'factory_girl_rails'
+  gem 'pry'
 end
 
 group :test do

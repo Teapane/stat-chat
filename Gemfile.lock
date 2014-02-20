@@ -231,6 +231,7 @@ DEPENDENCIES
   omniauth
   omniauth-github
   pg
+  pry
   rails (= 4.0.2)
   rspec-rails
   sass-rails (~> 4.0.0)
