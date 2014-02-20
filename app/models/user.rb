@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
   end
 
   def update_commits
-    @commit_fetcher = CommitFetcher.new(self.nickname)
-    self.commits = @commit_fetcher.alltime_commits
+    commit_counter = CommitCounter.new(CommitFetcher.fetch(self.nickname))
+    self.commits = commit_counter.alltime_commits
     self.save
   end
 
