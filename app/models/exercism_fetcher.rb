@@ -10,4 +10,8 @@ class ExercismFetcher
   def hibernating_count
     stats[:activity][:exercises][:hibernating].to_i
   end
+
+  def nitpick_count
+    stats[:activity][:total][:nitpicks].to_i
+  end
 end

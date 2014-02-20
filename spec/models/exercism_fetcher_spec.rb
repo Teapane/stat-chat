@@ -13,8 +13,7 @@ describe ExercismFetcher do
   end
 
     def snapshot
-      snapshot = {
-                    activity: {
+     { activity: {
                     most_recent: {
                     submission: "2014-02-19T04:23:37Z",
                     nitpick: "2014-01-15T17:45:11Z"
@@ -42,10 +41,14 @@ describe ExercismFetcher do
      expect(response.status).to eq 200
     end
 
-    it "returns hibernating exercises" do 
-      
+    it "returns hibernating exercises" do   
       exercism_fetcher.stub(:stats).and_return(snapshot)
       expect(exercism_fetcher.hibernating_count).to eq 3
+    end
+
+    it "returns nitpicks given" do 
+      exercism_fetcher.stub(:stats).and_return(snapshot)
+      expect(exercism_fetcher.nitpick_count).to eq 0
     end
   end
 
