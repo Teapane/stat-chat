@@ -12,7 +12,6 @@ describe 'login with github' do
 
     it 'can log me in' do
       valid_login
-      save_and_open_page
       current_path.should eq stats_path
     end
 
