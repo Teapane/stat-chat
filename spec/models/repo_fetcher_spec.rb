@@ -18,12 +18,14 @@ describe RepoFetcher do
   end
 
   it "gets response from github api" do
-    expect(response).to eq 200
+    expect(response.status).to eq 200
   end
 
 
   it "returns the correct count of public repos" do 
-    expect(response["public_repos"]).to eq 25
+    expect(repo_fetcher.body["public_repos"]).to eq 25
   end
+
+  
 
 end

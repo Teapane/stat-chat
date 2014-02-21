@@ -15,25 +15,34 @@ http_interactions:
       - '*/*'
   response:
     status:
-      code: 403
-      message: Forbidden
+      code: 200
+      message: OK
     headers:
       Server:
       - GitHub.com
       Date:
-      - Fri, 21 Feb 2014 21:04:24 GMT
+      - Fri, 21 Feb 2014 21:22:27 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Status:
-      - 403 Forbidden
+      - 200 OK
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '0'
+      - '58'
       X-Ratelimit-Reset:
-      - '1393018636'
+      - '1393020960'
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Last-Modified:
+      - Fri, 21 Feb 2014 21:10:08 GMT
+      Etag:
+      - '"0a73c43b0249a41db05c248ad42d4cde"'
+      Vary:
+      - Accept
+      - Accept-Encoding
       X-Github-Media-Type:
       - github.beta
       X-Content-Type-Options:
@@ -46,14 +55,13 @@ http_interactions:
       Access-Control-Allow-Origin:
       - '*'
       X-Github-Request-Id:
-      - 32C9BB81:3416:5CD8:5307BF58
+      - 32C9BB84:3413:2F598:5307C38E
     body:
       encoding: UTF-8
-      string: '{"message":"API rate limit exceeded for 50.201.187.129. (But here''s
-        the good news: Authenticated requests get a higher rate limit. Check out the
-        documentation for more details.)","documentation_url":"http://developer.github.com/v3/#rate-limiting"}'
+      string: '{"login":"Teapane","id":4227025,"avatar_url":"https://gravatar.com/avatar/4164b853dcf6cad5fae8af49de2e12b5?d=https%3A%2F%2Fidenticons.github.com%2Fd182c202b8165476eae48d2d8d3aaa03.png&r=x","gravatar_id":"4164b853dcf6cad5fae8af49de2e12b5","url":"https://api.github.com/users/Teapane","html_url":"https://github.com/Teapane","followers_url":"https://api.github.com/users/Teapane/followers","following_url":"https://api.github.com/users/Teapane/following{/other_user}","gists_url":"https://api.github.com/users/Teapane/gists{/gist_id}","starred_url":"https://api.github.com/users/Teapane/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Teapane/subscriptions","organizations_url":"https://api.github.com/users/Teapane/orgs","repos_url":"https://api.github.com/users/Teapane/repos","events_url":"https://api.github.com/users/Teapane/events{/privacy}","received_events_url":"https://api.github.com/users/Teapane/received_events","type":"User","site_admin":false,"name":"Tyler
+        Long","company":"","blog":"twitter.com/teapane","location":"303","email":"tyler.stephen.long@gmail.com","hireable":true,"bio":null,"public_repos":25,"public_gists":0,"followers":18,"following":24,"created_at":"2013-04-22T17:22:23Z","updated_at":"2014-02-21T21:10:08Z"}'
     http_version: 
-  recorded_at: Fri, 21 Feb 2014 21:04:28 GMT
+  recorded_at: Fri, 21 Feb 2014 21:22:35 GMT
 - request:
     method: get
     uri: https://api.github.com/users/Teapane
@@ -69,25 +77,34 @@ http_interactions:
       - '*/*'
   response:
     status:
-      code: 403
-      message: Forbidden
+      code: 200
+      message: OK
     headers:
       Server:
       - GitHub.com
       Date:
-      - Fri, 21 Feb 2014 21:04:24 GMT
+      - Fri, 21 Feb 2014 21:22:29 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Status:
-      - 403 Forbidden
+      - 200 OK
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '0'
+      - '57'
       X-Ratelimit-Reset:
-      - '1393018636'
+      - '1393020960'
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Last-Modified:
+      - Fri, 21 Feb 2014 21:10:08 GMT
+      Etag:
+      - '"0a73c43b0249a41db05c248ad42d4cde"'
+      Vary:
+      - Accept
+      - Accept-Encoding
       X-Github-Media-Type:
       - github.beta
       X-Content-Type-Options:
@@ -100,12 +117,11 @@ http_interactions:
       Access-Control-Allow-Origin:
       - '*'
       X-Github-Request-Id:
-      - 32C9BB81:3414:362D:5307BF58
+      - 32C9BB84:3412:175D9:5307C395
     body:
       encoding: UTF-8
-      string: '{"message":"API rate limit exceeded for 50.201.187.129. (But here''s
-        the good news: Authenticated requests get a higher rate limit. Check out the
-        documentation for more details.)","documentation_url":"http://developer.github.com/v3/#rate-limiting"}'
+      string: '{"login":"Teapane","id":4227025,"avatar_url":"https://gravatar.com/avatar/4164b853dcf6cad5fae8af49de2e12b5?d=https%3A%2F%2Fidenticons.github.com%2Fd182c202b8165476eae48d2d8d3aaa03.png&r=x","gravatar_id":"4164b853dcf6cad5fae8af49de2e12b5","url":"https://api.github.com/users/Teapane","html_url":"https://github.com/Teapane","followers_url":"https://api.github.com/users/Teapane/followers","following_url":"https://api.github.com/users/Teapane/following{/other_user}","gists_url":"https://api.github.com/users/Teapane/gists{/gist_id}","starred_url":"https://api.github.com/users/Teapane/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Teapane/subscriptions","organizations_url":"https://api.github.com/users/Teapane/orgs","repos_url":"https://api.github.com/users/Teapane/repos","events_url":"https://api.github.com/users/Teapane/events{/privacy}","received_events_url":"https://api.github.com/users/Teapane/received_events","type":"User","site_admin":false,"name":"Tyler
+        Long","company":"","blog":"twitter.com/teapane","location":"303","email":"tyler.stephen.long@gmail.com","hireable":true,"bio":null,"public_repos":25,"public_gists":0,"followers":18,"following":24,"created_at":"2013-04-22T17:22:23Z","updated_at":"2014-02-21T21:10:08Z"}'
     http_version: 
-  recorded_at: Fri, 21 Feb 2014 21:04:28 GMT
+  recorded_at: Fri, 21 Feb 2014 21:22:37 GMT
 recorded_with: VCR 2.8.0
