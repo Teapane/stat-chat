@@ -31,8 +31,4 @@ class User < ActiveRecord::Base
   def commit_points
     (commits * 0.25)
   end
-
-  def set_score
-    self.scores
-  end
 end
