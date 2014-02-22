@@ -16,4 +16,11 @@ describe Score do
     score.total.should be 410
   end
 
+  it "can calculate exercism languages score" do 
+    VCR.use_cassette 'model/exercism_fetcher_score' do
+      username = 'Teapane'
+    score.exercism_language_score(username).should be 40
+    end
+  end
+
 end

@@ -13,4 +13,8 @@ class Score < ActiveRecord::Base
     end
     values
   end
+
+  def exercism_language_score(username)
+    ExercismFetcher.new(username).language_count * 10
+  end
 end

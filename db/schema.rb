@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20140220201946) do
     t.integer  "contributed_repos_score", default: 0
     t.integer  "hibernating_score",       default: 0
     t.integer  "nitpicks_score",          default: 0
-    t.integer  "submission_score",        default: 0
     t.integer  "submissions_score",       default: 0
     t.integer  "languages_score",         default: 0
     t.integer  "user_id"
