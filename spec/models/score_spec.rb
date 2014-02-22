@@ -29,8 +29,16 @@ describe Score do
     end
 
 
-  xit "can calculate exercism nitpicks score" do 
-    score.exercism_nitpick_score.should be 0
+  it "can calculate exercism nitpicks score" do 
+    score.exercism_nitpick_score.should be 150
+  end
+
+  it "can calculate exercism submissions score" do 
+    score.exercism_submissions_score.should be 100
+  end
+
+  it "can calculate exercism hibernating exercises score" do 
+    score.exercism_hibernating_score.should be -30
   end
 
 

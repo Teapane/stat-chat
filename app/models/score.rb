@@ -18,11 +18,15 @@ class Score < ActiveRecord::Base
     attributes["languages_score"] * 10
   end
 
-  def exercism_nitpick_score(username)
-    ExercismFetcher.new(username).nitpick_count * 3
+  def exercism_nitpick_score
+    attributes["nitpicks_score"] * 3
   end
 
-  def set_score
-    self. update_attributes(commits_score: attributes[:commits_score] * 4)
+  def exercism_submissions_score 
+    attributes["submissions_score"] * 2
+  end
+
+  def exercism_hibernating_score
+    attributes["hibernating_score"] * -3
   end
 end
