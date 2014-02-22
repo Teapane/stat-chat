@@ -16,11 +16,22 @@ describe Score do
     score.total.should be 410
   end
 
-  it "can calculate exercism languages score" do 
-    VCR.use_cassette 'model/exercism_fetcher_score' do
-      username = 'Teapane'
-    score.exercism_language_score(username).should be 40
-    end
+  attr_reader :username
+
+  before do 
+   VCR.use_cassette 'model/exercism_fetcher_score' do
+      @username = 'Teapane'
+    end  
   end
+
+  it "can calculate exercism languages score" do  
+    score.exercism_language_score.should be 1000
+    end
+
+
+  xit "can calculate exercism nitpicks score" do 
+    score.exercism_nitpick_score.should be 0
+  end
+
 
 end

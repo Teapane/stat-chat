@@ -19,6 +19,6 @@ class ExercismFetcher
   end
 
   def language_count
-    stats["activity"]["total"]["languages"].to_i
+    stats[:activity][:total][:languages].to_i
   end
 end
