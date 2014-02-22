@@ -6,4 +6,8 @@ class BadgeFetcher
     @username = username
   end
 
+  def fetch
+    [Badge.new, Badge.new]
+  end
+
 end

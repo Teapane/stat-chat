@@ -12,4 +12,10 @@ describe BadgeFetcher do
     badge_fetcher.username.should eq 'wvmitchell'
   end
 
+  it 'should fetch an array of badges' do
+    badge_fetcher.fetch.each do |badge|
+      badge.class.should eq Badge
+    end
+  end
+
 end
