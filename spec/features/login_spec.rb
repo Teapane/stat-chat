@@ -34,7 +34,7 @@ describe 'login with github' do
     it 'displays a score based on api gathered info' do
       valid_login
       within('tbody tr:first .power_points') do
-        page.should have_content '0'
+        page.should have_content 25
       end
     end
   end
