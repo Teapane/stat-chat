@@ -29,4 +29,8 @@ class Score < ActiveRecord::Base
   def exercism_hibernating_score
     attributes["hibernating_score"] * -3
   end
+
+  def github_commits_score
+    attributes["commits_score"]
+  end
 end

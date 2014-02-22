@@ -41,5 +41,9 @@ describe Score do
     score.exercism_hibernating_score.should be -30
   end
 
+  it "can calculate total GitHub commits" do 
+    score.github_commits_score.should be 100
+  end
+
 
 end
