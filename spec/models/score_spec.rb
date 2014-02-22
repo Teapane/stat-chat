@@ -45,5 +45,9 @@ describe Score do
     score.github_commits_score.should be 100
   end
 
+  it "can calculate total public GitHub repos" do 
+    score.github_repos_score.should be 100
+  end
+
 
 end

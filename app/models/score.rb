@@ -33,4 +33,8 @@ class Score < ActiveRecord::Base
   def github_commits_score
     attributes["commits_score"]
   end
+
+  def github_repos_score
+    attributes["public_repo_score"] * 2
+  end
 end
