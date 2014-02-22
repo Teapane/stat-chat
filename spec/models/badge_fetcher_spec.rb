@@ -18,4 +18,8 @@ describe BadgeFetcher do
     end
   end
 
+  it 'should fetch badges for the user' do
+    badge_fetcher.fetch.first.username.should eq 'wvmitchell'
+  end
+
 end

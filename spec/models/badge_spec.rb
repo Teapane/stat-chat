@@ -21,5 +21,9 @@ describe Badge do
     badge.image.should eq 'someurl.example.com'
   end
 
+  it 'has a description' do
+    badge.description.should eq 'Its really nothing, really'
+  end
+
 
 end
