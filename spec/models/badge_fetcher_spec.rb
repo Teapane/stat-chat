@@ -22,4 +22,9 @@ describe BadgeFetcher do
     badge_fetcher.fetch.first.username.should eq 'wvmitchell'
   end
 
+  it 'should not error out on invalid user' do
+    @badge_fetcher = BadgeFetcher.new('jodfwokw')
+    badge_fetcher.fetch.count.should eq 0
+  end
+
 end

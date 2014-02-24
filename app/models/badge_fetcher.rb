@@ -8,7 +8,11 @@ class BadgeFetcher
 
   def fetch
     response = Faraday.get("https://coderwall.com/#{username}.json")
-    parsed = JSON.parse(response.body)
+    response.body.strip == '' ? [] : parse(response.body)
+  end
+
+  def parse(body)
+    parsed = JSON.parse(body)
     parsed["badges"].collect do |badge_details|
       attributes = {
         username: username,
