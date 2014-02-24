@@ -46,7 +46,6 @@ describe 'login with github' do
     expect(user.scores.count).to be 1
   end
 
-
   def valid_login
     visit login_path
     click_on 'Login with Github'

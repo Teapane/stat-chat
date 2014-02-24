@@ -31,4 +31,16 @@ class User < ActiveRecord::Base
   def commit_points
     (commits * 0.25)
   end
+
+  def set_todays_score
+    score = todays_score || scores.create
+    score.update_attributes(public_repo_score: CommitCounter.new(CommitFetcher.fetch(nickname)).alltime_commits)
+  end
+
+  private
+
+  def todays_score
+    scores.detect { |score| score.created_at.strftime("%Y-%m-%d") == Time.now.strftime("%Y-%m-%d") }
+  end
+
 end
