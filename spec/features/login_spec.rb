@@ -1,6 +1,7 @@
 require 'spec_helper'
 
-describe 'login with github' do
+describe 'login with github', :vcr do 
+
 
   context 'when I visit the page without having logged in' do
     it 'has a login form' do
@@ -27,28 +28,20 @@ describe 'login with github' do
     it 'displays username on the power rankings' do
       valid_login
       within('.widget-content') do
-        page.should have_content 'somebody'
+        page.should have_content 'Teapane'
       end
     end
 
     it 'displays a score based on api gathered info' do
       valid_login
       within('tbody tr:first .power_points') do
-        page.should have_content 25
+        page.should have_content "843"
       end
     end
-  end
-
-  it "creates a valid score for first time user" do
-    user = FactoryGirl.create(:user)
-    expect(user.scores.empty?).to be true
-    valid_login
-    expect(user.scores.count).to be 1
   end
 
   def valid_login
     visit login_path
     click_on 'Login with Github'
   end
-
 end
