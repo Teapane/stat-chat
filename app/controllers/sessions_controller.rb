@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_from_auth_hash(auth_hash)
     @user.update_commits
     session[:user_id] = @user.id
+    @user.set_todays_score
     redirect_to stats_path
   end
 

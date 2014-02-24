@@ -7,18 +7,18 @@ class ExercismFetcher
   end
 
   def hibernating_count
-    stats[:activity][:exercises][:hibernating].to_i
+    stats["activity"]["exercises"]["hibernating"].to_i
   end
 
   def nitpick_count
-    stats[:activity][:total][:nitpicks].to_i
+    stats["activity"]["total"]["nitpicks"].to_i
   end
 
   def submission_count
-    stats[:activity][:total][:submissions].to_i
+    stats["activity"]["total"]["submissions"].to_i
   end
 
   def language_count
-    stats[:activity][:total][:languages].to_i
+    stats["activity"]["total"]["languages"].to_i
   end
 end
