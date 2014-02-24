@@ -17,8 +17,7 @@
                 <td>Programmer</td>
                 <td>PowerPoints</td>
                 <td>GitHub Commits</td>
-                <td>Exercisms</td>
-                <td>Chat Points</td>
+                <td>Exercism Submissions</td>
               </tr>
             </thead>
             <tbody>
@@ -26,10 +25,9 @@
               <tr>
                 <td class='rank'><%= index + 1 %></td>
                 <td class='username'><%= link_to user.nickname, user_path(user) %></td>
-                <td class='power_points'><%= 25 %></td>
+                <td class='power_points'><%= user.score %></td>
                 <td class='commits'><%= user.commits %></td>
-                <td class='exercisms'></td>
-                <td class='chat_points'></td>
+                <td class='exercisms'><%= user.exercism_submissions %></td>
               </tr>
               <% end %>
             </tbody>

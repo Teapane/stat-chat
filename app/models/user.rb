@@ -40,6 +40,10 @@ class User < ActiveRecord::Base
       )
   end
 
+  def exercism_submissions
+    ExercismFetcher.new(nickname).submission_count
+  end
+
   private
 
   def todays_score

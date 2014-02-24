@@ -10,43 +10,37 @@ describe Score do
   it {should validate_presence_of(:submissions_score) }
   it {should validate_presence_of(:languages_score)}
 
-  let(:score) { FactoryGirl.create(:score) }
-
-  it "can calculate an agregate score" do
-    score.total.should be 410
-  end
 
   attr_reader :username
 
-  before do 
+  before do
    VCR.use_cassette 'model/exercism_fetcher_score' do
       @username = 'Teapane'
-    end  
-  end
-
-  it "can calculate exercism languages score" do  
-    score.exercism_language_score.should be 1000
     end
-
-
-  it "can calculate exercism nitpicks score" do 
-    score.exercism_nitpick_score.should be 150
   end
 
-  it "can calculate exercism submissions score" do 
-    score.exercism_submissions_score.should be 100
+  it "can calculate exercism languages score" do
+    Score.exercism_language_score(username).should be 40
   end
 
-  it "can calculate exercism hibernating exercises score" do 
-    score.exercism_hibernating_score.should be -30
+  it "can calculate exercism nitpicks score" do
+    Score.exercism_nitpick_score(username).should be 3
   end
 
-  it "can calculate total GitHub commits" do 
-    score.github_commits_score.should be 100
+  it "can calculate exercism submissions score" do
+    Score.exercism_submissions_score(username).should be 126
   end
 
-  it "can calculate total public GitHub repos" do 
-    score.github_repos_score.should be 100
+  it "can calculate exercism hibernating exercises score" do
+    Score.exercism_hibernating_score(username).should be 0
+  end
+
+  it "can calculate total GitHub commits" do
+    Score.github_commits_score(username).should be 624
+  end
+
+  it "can calculate total public GitHub repos" do
+    Score.github_repos_score(username).should be 50
   end
 
 

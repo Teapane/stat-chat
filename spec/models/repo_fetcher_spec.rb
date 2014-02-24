@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe RepoFetcher do 
-  attr_reader :repo_fetcher, :username, :response
+describe RepoFetcher do
+  attr_reader :repo_fetcher, :username, :response, :parsed_data
 
   before do
     VCR.use_cassette 'model/repo_fetcher' do
@@ -21,11 +21,8 @@ describe RepoFetcher do
     expect(response.status).to eq 200
   end
 
-
-  it "returns the correct count of public repos" do 
-    expect(repo_fetcher.body["public_repos"]).to eq 25
+  it "returns the correct count of public repos" do
+    expect(parsed_data).to eq 25
   end
-
-  
 
 end

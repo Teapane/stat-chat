@@ -40,7 +40,7 @@ describe 'login with github' do
   end
 
   it "creates a valid score for first time user" do
-    user = FactoryGirl.create(:user) 
+    user = FactoryGirl.create(:user)
     expect(user.scores.empty?).to be true
     valid_login
     expect(user.scores.count).to be 1

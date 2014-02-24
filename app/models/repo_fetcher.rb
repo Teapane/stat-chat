@@ -20,5 +20,5 @@ class RepoFetcher
   def body
     JSON.parse(response.body)
   end
-  
+
 end
