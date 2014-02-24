@@ -10,7 +10,7 @@ class RepoFetcher
   end
 
   def repos
-   response["public_repos"]
+   body["public_repos"]
   end
 
   def response

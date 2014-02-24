@@ -14,27 +14,28 @@ class Score < ActiveRecord::Base
     values
   end
 
-  def exercism_language_score
-    attributes["languages_score"] * 10
+  def self.exercism_language_score(nickname)
+    ExercismFetcher.new(nickname).language_count * 10
   end
 
-  def exercism_nitpick_score
-    attributes["nitpicks_score"] * 3
+  def self.exercism_nitpick_score(nickname)
+    ExercismFetcher.new(nickname).nitpick_count * 3
   end
 
-  def exercism_submissions_score 
-    attributes["submissions_score"] * 2
+  def self.exercism_submissions_score(nickname)
+    ExercismFetcher.new(nickname).submission_count * 2
   end
 
-  def exercism_hibernating_score
-    attributes["hibernating_score"] * -3
+  def self.exercism_hibernating_score(nickname)
+    ExercismFetcher.new(nickname).hibernating_count * -3
   end
 
-  def github_commits_score
-    attributes["commits_score"]
+  def self.github_commits_score(nickname)
+    CommitCounter.new(CommitFetcher.fetch(nickname)).alltime_commits
   end
 
-  def github_repos_score
-    attributes["public_repo_score"] * 2
+  def self.github_repos_score(nickname)
+    RepoFetcher.new(nickname).repos * 2
   end
+
 end

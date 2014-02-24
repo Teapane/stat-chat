@@ -20,21 +20,24 @@ class User < ActiveRecord::Base
     User.ranked_users.index(self) + 1
   end
 
+  def score
+    scores.last.total
+  end
+
   def self.ranked_users
     User.all.sort_by { |user| user.score }.reverse
   end
 
-  def score
-    (commits * 0.25)
-  end
-
-  def commit_points
-    (commits * 0.25)
-  end
-
   def set_todays_score
     score = todays_score || scores.create
-    score.update_attributes(public_repo_score: CommitCounter.new(CommitFetcher.fetch(nickname)).alltime_commits)
+    score.update_attributes(
+      commits_score: Score.github_commits_score(nickname),
+      public_repo_score: Score.github_repos_score(nickname),
+      hibernating_score: Score.exercism_hibernating_score(nickname),
+      nitpicks_score: Score.exercism_nitpick_score(nickname),
+      submissions_score: Score.exercism_submissions_score(nickname),
+      languages_score: Score.exercism_language_score(nickname)
+      )
   end
 
   private
