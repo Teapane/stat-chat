@@ -7,3 +7,11 @@ A dashboard to display your ranking among other class members based on your exer
 run tests with rspec
 ```
 
+Use the project; fork it!
+```
+rake db:migrate
+
+rails s 
+
+```
+ 
