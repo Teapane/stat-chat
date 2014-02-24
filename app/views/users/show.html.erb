@@ -30,6 +30,15 @@
         </div>
       </div>
     </div>
+
+    <div class='badges'>
+      <% @badges.each do |badge| %>
+        <div class='badge' style='margin:2%'>
+          <h4><%= badge.name %></h4>
+          <%= image_tag badge.image %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 

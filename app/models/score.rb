@@ -13,4 +13,28 @@ class Score < ActiveRecord::Base
     end
     values
   end
+
+  def exercism_language_score
+    attributes["languages_score"] * 10
+  end
+
+  def exercism_nitpick_score
+    attributes["nitpicks_score"] * 3
+  end
+
+  def exercism_submissions_score 
+    attributes["submissions_score"] * 2
+  end
+
+  def exercism_hibernating_score
+    attributes["hibernating_score"] * -3
+  end
+
+  def github_commits_score
+    attributes["commits_score"]
+  end
+
+  def github_repos_score
+    attributes["public_repo_score"] * 2
+  end
 end

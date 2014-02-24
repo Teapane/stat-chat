@@ -1,11 +1,11 @@
 # data = CommitFetcher.fetch(username)
 # CommitCounter.new(data)
 
-class CommitCounter 
+class CommitCounter
   attr_reader :commits
 
-  def initialize(data, wrapper: CommitBatch)
-    @commits = data.map{|d| wrapper.new(d)}
+  def initialize(data, options = {wrapper: CommitBatch})
+    @commits = data.map{|d| options[:wrapper].new(d)}
   end
 
   def number_of_commits_this_week

@@ -12,7 +12,6 @@ describe 'login with github' do
 
     it 'can log me in' do
       valid_login
-      save_and_open_page
       current_path.should eq stats_path
     end
 
@@ -35,9 +34,16 @@ describe 'login with github' do
     it 'displays a score based on api gathered info' do
       valid_login
       within('tbody tr:first .power_points') do
-        page.should have_content '0'
+        page.should have_content 25
       end
     end
+  end
+
+  it "creates a valid score for first time user" do
+    user = FactoryGirl.create(:user) 
+    expect(user.scores.empty?).to be true
+    valid_login
+    expect(user.scores.count).to be 1
   end
 
 
