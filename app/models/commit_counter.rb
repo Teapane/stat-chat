@@ -27,8 +27,8 @@ class CommitCounter
   def commits_in_last(num_weeks)
     start = this_week - num_weeks
     (start..this_week).collect do |n|
-      # collect commits for previous year and current
-    end
+      n < 1 ? commits_for_week_last_year(n+52) : commits_for_week(n)
+    end.flatten
   end
 
   private

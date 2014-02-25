@@ -56,7 +56,15 @@ describe CommitCounter do
   end
 
   it "returns commits over a range prior" do
-    expect(commit_counter.commits_in_last(3).count).to eq(23)
+    expect(commit_counter.commits_in_last(3).count).to eq(3)
+  end
+
+  it "knows the previous year" do
+    expect(commit_counter.send(:last_year)).to eq(2013)
+  end
+
+  it "should return commits of a given week from the previous year" do
+    expect(commit_counter.commits_for_week_last_year(7).first.total).to eq 2
   end
 
 end
