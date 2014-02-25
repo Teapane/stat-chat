@@ -36,7 +36,7 @@ describe Score do
   end
 
   it "can calculate total GitHub commits" do
-    Score.github_commits_score(username).should be 624
+    Score.github_commits_score(username).should be 595
   end
 
   it "can calculate total public GitHub repos" do

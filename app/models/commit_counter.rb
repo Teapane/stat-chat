@@ -24,6 +24,10 @@ class CommitCounter
     commits.inject(0) {|total, commit| total + commit.total }
   end
 
+  def last_six_months_commits
+    commits_in_last(26).reduce(0) { |sum, commit| sum + commit.total}
+  end
+
   def commits_in_last(num_weeks)
     start = this_week - num_weeks
     (start..this_week).collect do |n|

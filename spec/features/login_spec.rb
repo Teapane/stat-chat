@@ -35,7 +35,7 @@ describe 'login with github', :vcr do
     it 'displays a score based on api gathered info' do
       valid_login
       within('tbody tr:first .power_points') do
-        page.should have_content "843"
+        page.should have_content "814"
       end
     end
   end

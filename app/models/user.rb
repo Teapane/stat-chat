@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  validates_presence_of :email, :nickname, :commits
+  validates_presence_of :email, :nickname
   has_many :scores
 
   def self.find_or_create_from_auth_hash(auth_hash)
@@ -10,18 +10,16 @@ class User < ActiveRecord::Base
     )
   end
 
-  def update_commits
-    commit_counter = CommitCounter.new(CommitFetcher.fetch(self.nickname))
-    self.commits = commit_counter.alltime_commits
-    self.save
-  end
-
   def rank
     User.ranked_users.index(self) + 1
   end
 
   def score
     scores.last.total
+  end
+
+  def commits
+    scores.last.commits_score
   end
 
   def self.ranked_users

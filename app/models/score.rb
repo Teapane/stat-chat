@@ -31,7 +31,7 @@ class Score < ActiveRecord::Base
   end
 
   def self.github_commits_score(nickname)
-    CommitCounter.new(CommitFetcher.fetch(nickname)).alltime_commits
+    CommitCounter.new(CommitFetcher.fetch(nickname)).last_six_months_commits
   end
 
   def self.github_repos_score(nickname)
