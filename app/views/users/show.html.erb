@@ -27,6 +27,7 @@
         <div class='widget-content'>
           <canvas id='points-chart' height='300px' width='530px'>
           </canvas>
+          <div id='pointsLegend'></div>
         </div>
       </div>
     </div>
@@ -44,24 +45,25 @@
 
 <script>
   $(function(){
-  var data = [
-    {
-      value:  <%= @commit_points %>,
-      color:"#F38630"
-    },
-    {
-      value : 0,
-      color : "#E0E4CC"
-    },
-    {
-      value : 0,
-      color : "#69D2E7"
-    }     
-  ]
-  var ctx = $("#points-chart").get(0).getContext("2d");
-  new Chart(ctx).Pie(data);
-}) 
-  
+    var data = [
+      {
+        value:  <%= @commits_score %>,
+        color: "green"
+      },
+      {
+        value: <%= @repos_score %>,
+        color: "pink"
+      },
+      {
+        value : <%= @exercism_submissions_score %>,
+        color : "red"
+      }
+    ]
+    var ctx = $("#points-chart").get(0).getContext("2d");
+    new Chart(ctx).Pie(data);
+  })
+
+
 </script>
 
 <script>
@@ -87,5 +89,5 @@
     }
     var ctx = $("#ranking-chart").get(0).getContext("2d");
     new Chart(ctx).Line(data);
-  })  
+  })
 </script>
