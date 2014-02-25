@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>StatChater</title>
+  <title>Billy's Picks</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -15,7 +15,9 @@
           <ul class='nav navbar-nav navbar-right'>
            <li class='dropdown'>
              <a class='dropdown-toggle' data-toggle='dropdown'>
-               <%= current_user.email if current_user %>
+                <p><%= link_to 'Logout', logout_path %>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <%= current_user.nickname if current_user %></p>
+                
              </a>
              <ul class='dropdown-menu'>
                <li><a>Hello</a></li>
@@ -46,12 +48,6 @@
               <%= link_to user_path(current_user) do %>
                 <i class='icon-user'></i>
                 <span>Profile</span>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to do %>
-                <i class='icon-home'></i>
-                <span>Chat</span>
               <% end %>
             </li>
           </ul>
