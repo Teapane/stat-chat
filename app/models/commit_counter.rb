@@ -16,8 +16,19 @@ class CommitCounter
     commits.select { |commit| (find_week(commit.date)) == week_num && (find_year(commit.date) == this_year)}
   end
 
+  def commits_for_week_last_year(week_num = this_week)
+    commits.select { |commit| (find_week(commit.date)) == week_num && (find_year(commit.date) == last_year)}
+  end
+
   def alltime_commits
     commits.inject(0) {|total, commit| total + commit.total }
+  end
+
+  def commits_in_last(num_weeks)
+    start = this_week - num_weeks
+    (start..this_week).collect do |n|
+      # collect commits for previous year and current
+    end
   end
 
   private
@@ -32,6 +43,10 @@ class CommitCounter
 
   def this_year
     Date.today.year
+  end
+
+  def last_year
+    Date.today.year-1
   end
 
   def this_week
