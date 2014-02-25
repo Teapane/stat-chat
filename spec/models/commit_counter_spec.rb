@@ -3,15 +3,15 @@ require 'spec_helper'
 describe CommitCounter do
   attr_reader :commit_counter
 
-  before do 
-    data = [["2014/01/19", 0], 
-            ["2014/01/01", 2], 
-            ["2014/01/20", 0], 
-            ["2014/01/21", 0], 
-            ["2014/01/22", 3], 
-            ["2014/01/23", 4], 
-            ["2014/01/24", 0], 
-            ["2014/02/11", 1], 
+  before do
+    data = [["2014/01/19", 0],
+            ["2014/01/01", 2],
+            ["2014/01/20", 0],
+            ["2014/01/21", 0],
+            ["2014/01/22", 3],
+            ["2014/01/23", 4],
+            ["2014/01/24", 0],
+            ["2014/02/11", 1],
             ["2014/02/10", 10],
             ["2013/02/11", 2],
             ["#{Date.today}", 20]]
@@ -47,13 +47,24 @@ describe CommitCounter do
     expect(commit_counter.commits_for_week(1).count).to eq(1)
   end
 
-  it "returns number of commits for this week only" do 
+  it "returns number of commits for this week only" do
     expect(commit_counter.number_of_commits_this_week).to eq(20)
   end
 
-  it "returns number of commits all time" do 
+  it "returns number of commits all time" do
     expect(commit_counter.alltime_commits).to eq(42)
   end
 
+  it "returns commits over a range prior" do
+    expect(commit_counter.commits_in_last(3).count).to eq(3)
+  end
+
+  it "knows the previous year" do
+    expect(commit_counter.send(:last_year)).to eq(2013)
+  end
+
+  it "should return commits of a given week from the previous year" do
+    expect(commit_counter.commits_for_week_last_year(7).first.total).to eq 2
+  end
 
 end
