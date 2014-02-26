@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def recent_weeks
     ((Date.today.cweek-7)..(Date.today.cweek)).to_a.collect do |week|
-      Date.commercial(Date.today.year, week, 1).strftime("%m-%d")
+      Date.commercial(Date.today.year, week, 1).strftime("%m/%d")
     end
   end
 
