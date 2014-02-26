@@ -10,6 +10,7 @@ gem 'faraday'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'pg'
+gem 'jquery-turbolinks'
 
 group :doc do
   gem 'sdoc', require: false
