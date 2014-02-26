@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :require_login
 
   def show
-    @user = User.first #User.find(params[:id])
+    @user = User.find(params[:id])
     score = @user.scores.last
     @commits_score = score.commits_score
     @repos_score = score.public_repo_score
