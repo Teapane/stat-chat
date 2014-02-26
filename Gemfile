@@ -11,6 +11,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'pg'
 gem 'jquery-turbolinks'
+gem 'rdiscount'
 
 group :doc do
   gem 'sdoc', require: false
