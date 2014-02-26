@@ -160,3 +160,10 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 }
 
 
+.summary { 
+  color: #f90;
+  font-size: 32px;
+
+}
+
+
