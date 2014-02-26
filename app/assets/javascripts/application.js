@@ -23,4 +23,13 @@ $(function(){
     over_div.fadeToggle('slow');
   });
 
+  $(function(){
+    var str = location.pathname
+    $('.mainnav li').children('a').each(function(){
+      if (str === $(this).attr('href')){
+        $(this).parent('li').addClass('active')
+      }
+    })
+  });
+
 })
