@@ -84,13 +84,9 @@ span.login-checkbox > input[type='checkbox']:checked + label {
   font-size: 32px;
 }
 
-
-
-
-
-
-
-
+.billy {
+  background: asset_url('billy_loves_cats.png') no-repeat center center;
+}
 
 .register .login-social {
   margin-bottom: 1em;
@@ -156,5 +152,6 @@ span.login-checkbox > input[type='checkbox']:checked + label {
   }
 
 }
+
 
 
