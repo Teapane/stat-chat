@@ -19,7 +19,7 @@ describe 'login with github', :vcr do
     it 'will save my email when I log in' do
       valid_login
       within('#account_info') do
-        page.should have_content 'somebody@example.com'
+        page.should have_content 'Teapane'
       end
     end
   end
