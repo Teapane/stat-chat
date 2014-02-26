@@ -159,5 +159,10 @@ span.login-checkbox > input[type='checkbox']:checked + label {
   color: #ffa500; 
 }
 
+.summary { 
+  color: #f90;
+  font-size: 32px;
+
+}
 
 
