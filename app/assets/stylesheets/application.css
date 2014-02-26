@@ -153,5 +153,11 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 
 }
 
+.billy {
+  background-image: url('billy.png');
+  background-opacity: 0.1;
+  color: #ffa500; 
+}
+
 
 
