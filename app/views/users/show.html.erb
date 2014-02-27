@@ -48,6 +48,11 @@
         </div>
       </div>
     <% end %>
+    <% unless @badges.length > 0 %>
+      <%= link_to 'http://coderwall.com' do %>
+        No badges? Awww, its all good, just sign-up for your free coderwall account here
+      <% end %>
+    <% end %>
   </div>
 
 </div>
