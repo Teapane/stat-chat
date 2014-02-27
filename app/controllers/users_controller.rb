@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @commits_score = score.commits_score
     @repos_score = score.public_repo_score
     @exercism_submissions_score = score.submissions_score
-    @badges = []#BadgeFetcher.new(@user.nickname).fetch
+    @badges = BadgeFetcher.new(@user.nickname).fetch
     @weeks = recent_weeks
     @weekly_commits = get_weekly_commits
   end
