@@ -1,9 +1,10 @@
 <div class='container'>
 
   <div class='user-header'>
-    <h1 style="width:50%"><%= @user.nickname %></h1>&nbsp;
-      <h3>Top Cat #<%= @user.rank %> </h3>
-     <hr style="height:2px;width:100%;background-color:orange" />
+    <h1 style="width:50%"><%= @user.nickname %></h1>
+    <br />
+    <h3>Total Points: <%= @user.score %></h3>
+    <hr style="height:2px;width:100%;background-color:orange" />
   </div>
 
   <div class='row'>
@@ -47,6 +48,11 @@
           <p><%= badge.description %></p>
         </div>
       </div>
+    <% end %>
+    <% unless @badges.length > 0 %>
+      <%= link_to 'http://coderwall.com' do %>
+        No badges? Awww, its all good, just sign-up for your free coderwall account here
+      <% end %>
     <% end %>
   </div>
 

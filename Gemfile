@@ -13,6 +13,11 @@ gem 'pg'
 gem 'jquery-turbolinks'
 gem 'rdiscount'
 gem 'bluecloth'
+gem 'newrelic_rpm'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :doc do
   gem 'sdoc', require: false
