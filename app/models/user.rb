@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   end
 
   def self.ranked_users
-    User.all.sort_by { |user| user.score }.reverse
+    @ranked_users ||= User.all.sort_by { |user| user.score }.reverse
   end
 
   def set_todays_score
