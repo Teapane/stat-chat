@@ -1,5 +1,4 @@
 require File.expand_path('../boot', __FILE__)
-require './lib/markdown_handler'
 
 require 'rails/all'
 
