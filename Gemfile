@@ -11,6 +11,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'pg'
 gem 'jquery-turbolinks'
+gem 'newrelic_rpm'
 
 group :production do
   gem 'rails_12factor'
