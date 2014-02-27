@@ -10,5 +10,7 @@ StatChater::Application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
 
+  resources :calculators, only: [:index]
+
   root to: 'dashboard#index'
 end

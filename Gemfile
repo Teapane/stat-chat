@@ -11,6 +11,8 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'pg'
 gem 'jquery-turbolinks'
+gem 'rdiscount'
+gem 'bluecloth'
 gem 'newrelic_rpm'
 
 group :production do
