@@ -14,6 +14,8 @@ gem 'jquery-turbolinks'
 gem 'rdiscount'
 gem 'bluecloth'
 gem 'newrelic_rpm'
+gem 'redis'
+gem 'resque'
 
 group :production do
   gem 'rails_12factor'
