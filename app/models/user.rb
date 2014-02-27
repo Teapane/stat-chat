@@ -9,20 +9,20 @@ class User < ActiveRecord::Base
     )
   end
 
+  def self.ranked_users
+    User.all.sort_by { |user| user.score }.reverse
+  end
+
   def rank
-    User.ranked_users.index(self) + 1
+    @rank ||= User.ranked_users.index(self) + 1
   end
 
   def score
-    scores.last.total
+    @score ||= scores.last.total
   end
 
   def commits
-    scores.last.commits_score
-  end
-
-  def self.ranked_users
-    User.all.sort_by { |user| user.score }.reverse
+    @commits ||= scores.last.commits_score
   end
 
   def set_todays_score
@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   end
 
   def exercism_submissions
-    ExercismFetcher.new(nickname).submission_count
+    @exercism_submissions ||= ExercismFetcher.new(nickname).submission_count
   end
 
   private
